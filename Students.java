@@ -1,22 +1,21 @@
 package com.codercampus;
 
-import java.util.List;
 
 public class Students implements Comparable<Students>{
-	private int studentID;
+	private Integer studentID;
 	private String studentName;
 	private String Course;
 	private int Grade;
-	public Students(int studentID, String studentName, String Course, int Grade) {
+	public Students(Integer studentID, String studentName, String Course, Integer Grade) {
 		this.studentID = studentID;
 		this.studentName = studentName;
 		this.Course = Course;
 		this.Grade = Grade;
 	}
-	public int StudentID() {
+	public Integer StudentID() {
 		return studentID;
 	}
-	public void setStudnentID(int studentID) {
+	public void setStudnentID(Integer studentID) {
 		this.studentID = studentID;
 	}
 	public String getStudentName() {
@@ -31,18 +30,32 @@ public class Students implements Comparable<Students>{
 	public void setCourse(String course) {
 		Course = course;
 	}
-	public int getGrade() {
+	public Integer getGrade() {
 		return Grade;
 	}
-	public void setGrade(int grade) {
+	public void setGrade(Integer grade) {
 		Grade = grade;
+	}
+	
+	@Override
+	public String toString() {
+		return "Students [studentID=" + studentID + ", studentName=" + studentName + ", Course=" + Course + ", Grade="
+				+ Grade + "]";
 	}
 	@Override
 	public int compareTo(Students that) {
-		
-		// TODO Auto-generated method stub
-		return Integer.compare(other.Grade, this.Grade );
-	}
-
+//		Comparing it in descending order
+		if (that.Grade < this.Grade) {
+			return 1;
+		}
+			
+		else if (that.Grade == this.Grade ) {
+		return 0;	
 
 }
+		else {
+			return -1;
+		}
+	}
+}
+
