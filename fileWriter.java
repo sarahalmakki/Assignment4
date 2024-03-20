@@ -8,12 +8,13 @@ import java.util.List;
 public class fileWriter {
 
 try {
+//	initating 'line'  variable
 	String line;
 	String header = "Student ID,Student Name,Course,Grade";
 	BufferedWriter COMPSCIWriter = new BufferedWriter(new FileWriter("course1.csv"));
 	BufferedWriter STATWriter = new BufferedWriter(new FileWriter("course2.csv"));
 	BufferedWriter APMTHWriter = new BufferedWriter(new FileWriter("course3.csv"));
-	//	writing the files using the three objects
+	//	writing header line in each line
 	COMPSCIWriter.write(header + "\n");
 	STATWriter.write(header + "\n");
 	APMTHWriter.write(header + "\n");
@@ -39,7 +40,4 @@ try {
 	// TODO Auto-generated catch block
 	e.printStackTrace();
 }
-	}
-}
-
-
+	}}
